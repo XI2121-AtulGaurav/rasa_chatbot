@@ -6,25 +6,214 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: utter_botgreet
   - intent: mood_great
   - action: utter_happy
+
+- story: how_to_upload_payslip
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: help_me_with_past_employeer_document
+  - action: utter_past_employeer
+  - intent: want_help_with_payslip
+  - action: utter_pay_slip
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+
+- story: happy_direct_contractor
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: how_to_be_a_contrator
+  - action: utter_contract
+  - intent: help_me_as_direct_contractor
+  - action: utter_direct_contractor
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: help_as_third_party_contract
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: how_to_be_a_contrator
+  - action: utter_contract
+  - intent: want_info_as_third_party_contractor
+  - action: utter_third_party
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: what_to_fill_in_medical
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: upload_medical_certificate
+  - action: utter_medical_query
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: help_me_to_replace_Releaving_letter
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: help_me_with_past_employeer_document
+  - action: utter_past_employeer
+  - intent: information_about_Releaving_letter
+  - action: utter_Releaving_letter
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: help_with_esign_process
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: help_me_with_past_employeer_document
+  - action: utter_past_employeer
+  - intent: how_todo_esign
+  - action: utter_esign_process
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: help_tofind_form2_and_form11
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: how_to_get_form
+  - action: utter_get_form
+  - intent: where_to_find_form2_and_form11
+  - action: utter_search_form2
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: help_tofind_form16
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: how_to_get_form
+  - action: utter_get_form
+  - intent: not_having_form16
+  - action: utter_find_form16
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: help_to_find_candidateform_and_gratuityform
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: how_to_know_about_personal_document
+  - action: utter_get_personal_document
+  - intent: find_gratuityform_and_candidate_information
+  - action: utter_search_form2
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: help_to_find_cancelled_document
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: how_to_know_about_personal_document
+  - action: utter_get_personal_document
+  - intent: help_me_out_with_bank_document
+  - action: utter_cancelled_cheque
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
+
+- story: finding_pi_form
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - action: utter_botgreet
+  - intent: info_about_pi_forms
+  - action: utter_pi_report
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_details
+  - intent: goodbye
+  - action: utter_goodbye
+  # - action: action_restart
 
 - story: sad path 1
   steps:
   - intent: greet
   - action: utter_greet
+  - action: utter_botgreet
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
+  # - action: action_restart
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
