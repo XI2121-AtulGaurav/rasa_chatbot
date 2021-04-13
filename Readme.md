@@ -1,123 +1,76 @@
-## 🤖 Getting Started With Rasa Chatbot
+# Wellness Check Rasa ChatBot
+[![Python](https://img.shields.io/badge/Python-3.7.9-blue.svg?style=?style=flat-square&logo=python)](https://www.python.org/downloads/release/python-379)
+[![Rasa](https://img.shields.io/badge/Rasa%20Open%20Source-2.4.3-purple.svg?style=flat-square)](https://rasa.com/docs/rasa/)
 
-This repository contains frontend chatbot UI written in React & Rasa initial python project acting as backend. This guide will walk you through installation process for both frontend & backend and how to run it.
+This is rasa based chatbot. User is asked several health related questions and at the end the logs are shared back to the user. This project demonstrates how easy it is to create NLP based chatbots with rasa opensource sdk. It mainly consists of a Form and Custom Actions. A beginner friendly scope was kept so that any one looking for getting started, could refer this.
 
+## Setup and Installation
+It is recommended to use Python 3.6 or Python 3.7 with rasa framework. Below are the steps to run this project.
 
+1. Clone master branch of this repository & open root directory in terminal.
+2. Create virtual env with python: `python3.7 -m venv ./venv` and activate it by `source ./venv/bin/activate`
+3. Install rasa `pip install rasa`, with this you can now run rasa commands described below.
 
-#### 📍Prerequisites
+### Generating Trained Model
+Make sure python virtual env is active in terminal. Change directory to `backend` & run rasa train like below. After training is done, you will find `models` directory at `backend/models` this is the result of rasa NLU training & rasa Core training.
 
-You are expected to have following softwares installed already:
+```shell
+cd backend
+rasa train
+```
 
-1. Python v3.7.3 or v3.7.9
-2. Node Js v12 or greater
+### Running Actions Server
+After training is done, you need to run server to serve custom actions related computation. Open another terminal instance, activate virtual env and open `backend` directory.
 
+```shell
+rasa run actions
+```
 
+### Running Rasa Chatbot in Shell
+Below command loads the trained model, opens communication to custom actions running server & provides REPL to interact with chatbot.
 
-#### 🗄 Backend Installation & Setup
+```shell
+rasa shell
+```
 
-As per recommendation from Rasa [documentation](https://rasa.com/docs/rasa/installation/#2-virtual-environment-setup), it is advisable to install & run rasa projects in python virtual environment. Please follow below steps to create & install rasa in virtual environment:
+Once you have developed your bot and you are ready to integrate the bot with the UI, you can start the Rasa server using the below command
+```shell
+rasa run -m models --enable-api --cors "*" --debug
+```
 
-##### **Installing Rasa - Windows 10**
+If you have custom actions, you can start the action server using the below command
+```shell
+rasa run actions --cors "*" --debug
+```
+Once you have you Rasa server up and running, you can test the bot by running the index.html file in the browser.
 
-1. Clone & extract the repository in your system.
+## Chatbot Screenshots
 
-2. Open command prompt (cmd) at root directory, execute `dir` & you should see `requirements.txt` file in output list.
+**rasa train**
 
-3. Confirm python installation by executing `python3 --version` in cmd, you should see python version installed in output.
-
-4. To create virtual environment execute `python3 -m venv ./venv` in cmd. This will create `venv` directory.
-
-5. To activate virtual envrionment execute `.\venv\Scripts\activate`  in cmd. Now you should see your command prompts starting with `(venv)C:\>...` This means, any python package we install, that will be installed in this virtual environment only. Running programs will utilise packages from virtual environment.
-
-6. Execute `pip3 install -U pip` in cmd to make sure `pip` is up to date.
-
-7. Finally execute `pip3 install -r ./requirements.txt` to install Rasa & its dependencies. This can take lot of time depending on network speed. 
-
-8. To avoid installation errors, It is important to install Rasa & dependencies from provided `requirements.txt` file only.
-
-9. After installation is done, execute `pip3 list`, this will list all the packages installed inside your virtual envrionment (venv).
-
-10. Execute `rasa --version` & you should see output like below
-
-    ```bash
-    Rasa Version     : 2.2.5
-    Rasa SDK Version : 2.2.0
-    Rasa X Version   : None
-    Python Version   : 3.7.3
-    Operating System : .....
-    Python Path      : .....
-    ```
-
-    
-
-**Training Rasa Model - Windows 10**
-
-For the purpose of this guide, a sample rasa project is included in `backend` directory. This project was generated using command `rasa init` inside virtual environment.
-
-1. Make sure you are in the root directory of project, execute `dir` & you should see `requirements.txt` file in output list.
-
-2. If cmd prompt doesn't show `(venv)` at start of prompts, then you should activate `venv` by executing `.\venv\Scripts\activate`. Now you should see your command prompts starting with `(venv)C:\>...` 
-
-3. Execute `cd backend` in cmd, execute `dir` & confirm `config.yml` file in output list.
-
-4. Before running Rasa project, you should train the model. To do that execute `rasa train`, this will generate trained model file inside `models` folder. This can take upto 3-4 minutes, depending upon the chatbot training data.
-
-5. After training is done, open `credentials.yml` file in text editor such as vs code & make sure following lines are present in the file
-
-   ```yaml
-   socketio:
-     user_message_evt: user_uttered
-     bot_message_evt: bot_uttered
-     session_persistence: false
-   ```
-
-   Indentation is very important in `yml` files. Line 2, 3 & 4 are indented by 1-tab space.
-
-6. Finally run the rasa project by executing `rasa run --cors "*"` in cmd. This will start the rasa server like below:
-
-   ```bash
-   2021-01-21 01:23:32 INFO     rasa.model  - Loading model models/20210121-011915.tar.gz...
-   2021-01-21 01:23:32 INFO     root  - Starting Rasa server on http://localhost:5005
-   2021-01-21 01:23:32 INFO     rasa.model  - Loading model models/20210121-011915.tar.gz...
-   2021-01-21 01:23:40 INFO     root  - Rasa server is up and running.
-   ```
-
-   Please keep a note of url in line 2 above `http://localhost:5005`
-
-7. Keep this running in cmd. The backend setup is complete here.
+<img width="1594" alt="01 rasa-train-success" src="./images/01 rasa-train-success.png">
 
 
+**rasa run actions**
+
+<img width="1016" alt="02 rasa-run-actions-success" src="./images/02 rasa-run-actions-success.png">
 
 
+**rasa shell - happy flow 1 - affirmed for exercise**
 
-#### 💻 Frontend Installation & Setup
+<img width="1525" alt="03 rasa-shell-happy-flow" src="./images/03 rasa-shell-happy-flow.png">
 
-The frontend is a React Js project. The main component used for chatbot is an open source widget [rasa-webchat](https://github.com/botfront/rasa-webchat). Feel free to go through its documentation.
 
-**Install Frontend dependencies - Windows 10**
+**rasa shell - happy flow 2 - denied for exercise**
 
-1. Launch new command prompt window at the root directory of cloned repository , execute `dir` & you should see `requirements.txt` file in output list.
+<img width="1528" alt="04 rasa-shell-happy-flow-no-exercise" src="./images/04 rasa-shell-happy-flow-no-exercise.png">
 
-2. Execute `cd frontend`, then execute `dir` & you should see `package.json` file.
 
-3. To install all dependencies, execute `npm install`. This may take upto 3-4 minutes.
+**rasa shell - sad flow 1 - going out of scope & coming back**
 
-4. Inside `frontend` folder, & inside `src` you will see `config.js` file (`/frontend/src/config.js`). This is were you need to specify `socketUrl` we obtained in step 6 above. You can modify `initPayload` to initial intent your bot is configured for. Other properties like `title, subtitle, etc..` can also be modified to customised bot.
+<img width="1523" alt="05 rasa-shell-sad-path-1" src="./images/05 rasa-shell-sad-path-1.png">
 
-5. Lastly execute `npm run start` in cmd. You should see below output in cmd
 
-   ```bash
-   Compiled successfully!
-   
-   You can now view rasa-chatbot-ui in the browser.
-   
-     Local:            http://localhost:3000
-     On Your Network:  http://192.168.0.102:3000
-   
-   Note that the development build is not optimized.
-   To create a production build, use npm run build.
-   ```
+**rasa shell - sad flow 2 - going out of scope & denied to proceed**
 
-6. Open [http://localhost:3000](http://localhost:3000) in browser & you should see chatbot at bottom right of webpage like below.
-
-<img src="./chatbotpng.png" width="35%" align="center" />
+<img width="1525" alt="06 rasa-shell-sad-path-2" src="./images/06 rasa-shell-sad-path-2.png">

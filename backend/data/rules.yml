@@ -1,31 +1,17 @@
 version: "2.0"
 
 rules:
+- rule: Activate health_form
+  steps:
+  - intent: affirm
+  - action: health_form
+  - active_loop: health_form
 
-- rule: Say hi anytime if user tell greet
+- rule: Submit health_form
+  condition:
+  - active_loop: health_form
   steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_botgreet
-
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-  # - action: action_restart
-
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
-- rule: Say 'Sorry' any time if user deny
-  steps:
-  - intent: deny
-  - action: utter_details
-  
-- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
-  steps:
-  - intent: nlu_fallback
-  - action: utter_please_rephrase
-#   # - action: action_restart
+  - action: health_form
+  - active_loop: null
+  - action: utter_slots_value
+  - action: action_restart

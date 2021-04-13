@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -17,239 +16,8 @@ nlu:
     - goodevening
     - good afternoon
 
-- intent: how_to_get_form
-  examples: |
-    - Forms
-    - forms
-    - form2
-    - form
-    - help me with form 2
-    - help me with form 11
-    - search for form 2
-    - search for form 11
-    - form 11
-    - form 16
-    - help me with form 16
-    - help me with pf form
-    - pf form
-    - Pf Form
-    - how to get form 16
-
-- intent: info_about_pi_forms
-  examples: |
-    - pi report
-    - Pi report
-    - PI report
-    - PI Report
-    - not able to find pi report
-    - trying to reach out for pi report
-    - How to get PI report?
-    - where i will get PI report?
-    - how can i found PI report?
-    - can you help me to search pi report?
-    - searching for pi report
-    - How to get pi report?
-    - where i will get pi report?
-    - how can i found pi report?
-    - yes can you please help me to find pi form
-
-- intent: how_to_know_about_personal_document
-  examples: |
-    - personal documents
-    - Personal documents
-    - Personal Documents
-    - where to upload cancelled cheque
-    - information about gratuity form
-    - information about candidate form
-
-- intent: help_me_out_with_bank_document
-  examples: |
-    - i am not having cancelled cheque
-    - No cancelled cheque available, then what to attach in Bank documents?
-    - no cancelled cheque available then what to attach in bank documet
-    - i am not having cancelled cheque what can i upload in bank document
-    - what to upload in bank document if not having cancelled cheque
-    - unable to get cancelled cheque then what to upload in bank document
-    - not having cancelled cheque for bank document please help
-    - please help me for the cancelled cheque
-    - i am unable to produce cancelled cheque then what to upload
-    - i am not having cancelled cheque then what to upload on the site
-    - provide me information about that what can i upload on document when cancelled ceque is not available
-
-
-- intent: find_gratuityform_and_candidate_information
-  examples: |
-    - gratuity form
-    - Gratuity form
-    - want to know how to get gratuity form
-    - want to know how to get candidate information form
-    - searching for graduity form
-    - searching for candidate information form
-    - candidate information form
-    - Candidate information form
-    - where i will get candidate informarion form
-    - where i will get gratutiy form
-    - help me to find candidate information form
-    - help me to find gratuity form
-    - can you tell me how to get gratuity form
-    - can you tell me how to get candidate information form
-    - Candidate Information Form
-    - unable to find gratuity form
-    - unable to find candidate information form
-
-- intent: help_me_with_past_employeer_document
-  examples: |
-    - past employeer document
-    - Past Employeer Document
-    - Releaving letter
-    - releaving letter
-    - Pay Slip
-    - Pay slip
-    - esign
-
-- intent: want_help_with_payslip
-  examples: |
-    - payslips
-    - Payslips
-    - PaySlips
-    - payslip
-    - How to attach 3 payslips together?
-    - how to attach 3 payslips together
-    - how to combine 3 payslip together
-    - help me for attaching 3 payslip together
-    - please help me attaching 3 payslip
-    - i want information about attaching 3 payslips
-    - 3 payslips  attachment 
-    - i dont know how to attach 3 payslips
-    - tell me how to attach 3 payslip
-    - want information how to attach 3 payslip
-    - can you help me to know how to attach 3 payslip
-
-- intent: information_about_Releaving_letter
-  examples: |
-    - Relieving letter
-    - releaving letter
-    - Relieving letter is not available, What can be attached in place of that?
-    - in absence of relieving letter, what can i attach 
-    - i am not having relieving letter what i have to upload
-    - is there any alternate of relieving letter
-    - what can i attach in place of relieving letter
-    - please help me to uploading document in place of releving letter
-    - i have not got relieving letter then what can i upload
-    - i am not having releiving letters, what to attach there
-    - can you please inform me what to attach in place of releiving letter
-    - help me to know replacement of relieving letter
-    - help me to know replacement of Relieving letter
-    - can you please inform me what to attach in place of Releiving letter
-
-- intent: how_todo_esign
-  examples: |
-    - e-sign
-    - esign
-    - Esign
-    - How to e-sign all the documents?
-    - how to e-sign all the documents?
-    - can you please help me with esign
-    - what to do e-sign in the documents
-    - How to esign all the documents?
-    - how to esign all the documents
-    - help with esigning of document
-    - how to fill document?
-
-- intent: not_having_form16
-  examples: |
-    - form 16
-    - form16
-    - donot having form16 of previous year
-    - donot having form 16 of previous year
-    - form16 of previous year is not present
-    - form 16 of previous year is not present
-    - not having form16 of previous year
-    - not having form 16 of previous year
-    - form16 is not present
-    - form 16 is not present 
-    - what can i do if form 16 is not present
-    - what can i do if form16 is not present
-    - help me with form 16 
-    - yes want to know what to do if form 16 is not available
-
-- intent: how_to_be_a_contrator
-  examples: |
-    - Contractor
-    - contractor
-    - Appointed as a contractor
-    - appointed as a contractor
-
-- intent: help_me_as_direct_contractor
-  examples: |
-    - direct contractor
-    - Direct contractor
-    - I am joining as direct contractor, do I need to fill PF and other forms
-    - As a direct contrator is it necessary to fill the pf and other form
-    - As a direct contractor which forms i need to fill
-    - i have joined as a direct contractor what form i have to fill
-    - what form i have to fill as a direct contractor
-    - do i need to fill pf and other form as direct contractor
-    - it is necessary to fill pf and other forms as a direct contractor
-    - it is necessary to fill pf as a direct contractor
-
-- intent: upload_medical_certificate
-  examples: |
-    - what about medical certificate
-    - medical certificate
-    - i want information that what can i upload in medical
-    - what have to upload in medical 
-    - what should be uploaded in medical 
-    - what have to upload in medical certifiate ?
-    - what should be uploaded in medical certificate ?
-    - what have to upload in medical certifiate
-    - what should be uploaded in medical certificate
-    - i want to know what is to be uploaded in medical certificates
-    - what can be uploaded in medical certificates
-    - can you help me to know what can be uploaded in medical certificates?
-
-- intent: want_info_as_third_party_contractor
-  examples: |
-    - third party contrctor
-    - Third party contractor
-    - I am a Third Party Contractor, still do I need to fill PF and gratuity forms?
-    - As a third party contrator is it necessary to fill the pf and gratuity form
-    - As a third party contractor which forms i need to fill
-    - i have joined as a third party contractor what form i have to fill
-    - what form i have to fill as a third party contractor
-    - do i need to fill pf and other form as third party contractor
-    - do i need to fill pf and gratuity form as third party contractor
-    - it is necessary to fill pf and other form as a third party contractor
-    - it is necessary to fill pf and gratuity form as a third party contractor
-    - it is necessary to fill pf as a direct contractor
-    - it is necessary to fill gratuity form as third party contractor
-
-- intent: where_to_find_form2_and_form11
-  examples: |
-    - form2
-    - form11
-    - Form2
-    - Form11
-    - Form 2
-    - Form 11
-    - yes searching for form2
-    - where to get form2
-    - where to form 11
-    - yes searching for form11
-    - yes help me with form2
-    - yes help me with form11
-    - finding for form2
-    - finding for form11
-    - searching for form2
-    - searching for form11
-    - find form2
-    - find form11
-    - form 11
-
 - intent: goodbye
   examples: |
-    - thank you
-    - thats nice
     - good afternoon
     - cu
     - good by
@@ -270,6 +38,17 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - sure
+    - ok
+    - why not
+    - ok great
+    - yes I did
+    - yeah, great
+    - pretty good
+    - fine
+    - You bet
+    - I sure did
+    - more or less
 
 - intent: deny
   examples: |
@@ -280,40 +59,14 @@ nlu:
     - don't like that
     - no way
     - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - none
+    - absolutely not
+    - no thanks
+    - didn't do any
+    - no I didn't
+    - could have been better
+    - not great
+    - nope
 
 - intent: bot_challenge
   examples: |
@@ -321,3 +74,74 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: inform
+  examples: |
+    - a full [8 hours](sleep)
+    - only [four hours](sleep)
+    - about [six hours](sleep)
+    - [low](stress)
+    - [medium](stress)
+    - [high](stress) stress right now
+    - Yes, I went for a [run](exercise)
+    - uh huh an hour of [yoga](exercise)
+    - yep, I went for a [hike](exercise)
+    - Yes I took the dog for a [walk](exercise)
+    - Yeah, I played [tennis](exercise)
+    - I went [swimming](exercise)
+    - I went for [walk](exercise)
+    - I did [swimming](exercise)
+    - I went for [cycling](exercise)
+    - Took a [spin class](exercise)
+    - Did some [boxing](exercise)
+    - [rock climbing](exercise)
+    - played some [basketball](exercise)
+    - played [football](exercise)
+    - I did a [workout](exercise) video
+    - I want to get up early and go for a run
+    - Be more patient with my family
+    - Try to be a better friend
+    - Make sure to eat better tomorrow
+    - eat less junk food
+    - eat better
+    - spend less time on my phone
+    - don't procrastinate
+    - Go to bed earlier
+    - Don't stay up so late
+    - try to make some time to meditate
+    - i ate pretty healthy overall
+    - lots of fruits and vegetables
+    - I ate a salad
+    - too many snacks
+    - too many sweets
+    - too much junk food
+    - a lot of carbs
+    - too much fatty food
+    - Get more exercise
+
+- intent: out_of_scope
+  examples: |
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizza
+    - tell me the weather
+    - this isn't working
+    - I already told you that
+    - don't like that
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind
+
+- intent: thankyou
+  examples: |
+    - okay great thanks
+    - thank you
+    - sure thanks
+    - thanks bye

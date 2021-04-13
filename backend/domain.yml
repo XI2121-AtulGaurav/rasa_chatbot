@@ -1,172 +1,130 @@
-version: "2.0"
+version: '2.0'
 
 intents:
   - greet
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
-  - how_to_get_form
-  - where_to_find_form2_and_form11
-  - not_having_form16
-  - info_about_pi_forms
-  - find_gratuityform_and_candidate_information
-  - how_to_know_about_personal_document
-  - help_me_out_with_bank_document
-  - help_me_with_past_employeer_document
-  - want_help_with_payslip
-  - information_about_Releaving_letter
-  - how_todo_esign
-  - help_me_as_direct_contractor
-  - how_to_be_a_contrator
-  - want_info_as_third_party_contractor
-  - upload_medical_certificate
-  - nlu_fallback
-  - action_restart
+  - inform
+  - out_of_scope
+  - thankyou
+
+slots:
+  confirm_exercise:
+    type: bool
+    influence_conversation: false
+  exercise:
+    type: text
+    influence_conversation: false
+  sleep:
+    type: text
+    influence_conversation: false
+  diet:
+    type: text
+    influence_conversation: false
+  stress:
+    type: text
+    influence_conversation: false
+  goal:
+    type: text
+    influence_conversation: false
+
+entities:
+  - exercise
+  - sleep
+  - stress
 
 responses:
   utter_greet:
-  - text: "Hi, I am your FAQ Chatbot and Please let me know how can i help you ?"
-
-  utter_please_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
-
-  utter_cancelled_cheque:
-  - text: "You can attach the copy of passbook or  screenshot of the internet banking with IFSC code and bank account number."
-  
-  utter_medical_query:
-  - text: " A fit to work certificate, if it is not available now, please share it on email later on."
-  
-  utter_details:
-  - text: |
-      Ah Sorry to hear this i am unable to help you but you can contact us in these ways
-
-      1. Please call us on our contact number "0124 470 0200",
-         but please remember we are open from "9:00 to 19:00"
-
-      2. You can also mail us on our website and our team will
-         reach out to us :"https://xebia.com/contact"
-      
-  utter_botgreet:
-  - text: |-
-      I can Help you with these:-
-
-      1. Forms 
-      2. Personal Documents
-      3. Past Employeer Documents
-      4. Pi Report
-      5. Contracted Related FAQs
-      6. Medical Queries
-  
-  utter_contract:
-  - text: |-
-      I can help you with these:-
-
-      1. Diret Contractor
-      2. Third Party Contractor
-
-  utter_third_party:
-  - text: "Please upload a blank document in place of PF form 1, form 2, gratuity and CISF form."
- 
-  utter_direct_contractor:
-  - text: "You need to fill PF form 1, form 2 and CISF form, Please upload a blank form in place of gratuity form."
-
-  utter_past_employeer:
-  - text: |-
-      Here i can help you with these:-
-
-      1. Pay Slip
-      2. Releaving Letter
-      3. ESign
-  
-  utter_pay_slip:
-  - text: "you can attach it in 1 PDF."
-
-  utter_Releaving_letter:
-  - text: "Please upload the available letters and for the immediate last company, you can upload the email for last working day."
-
-  utter_esign_process:
-  - text: "You can use any digital signatures or you can create your login on docusign."
-
-  utter_pi_report:
-  - text: "Inside official information, there is a link to Predictive Index. Once you complete the same, the report will be sent on your mailbox."
-  
-  utter_get_form:
-  - text: |-
-      Here i can help you with these:-
-
-      1. Form 2
-      2. Form 11
-      3. Form 16
- 
-  utter_get_personal_document:
-  - text: |-
-      Here i can help you with these:-
-
-      1. Gratuity Form
-      2. Candidate Information Form
-      3. Bank Documents
-
-  utter_search_form2:
-  - text: "You can find these forms on documents and policies section."
+  - text: Hi! It's time for your daily wellness check. Tracking healthy habits is a great way to measure your progress over time. Would you like to answer few questions about your health?
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
 
   utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_find_form16:
-  - text: "Please upload the existing Form 16 and ask the previous employer to share the pending one. Share it with us on email later on. This is a mandatory document for BGV so please follow up and get it closed."
+  - text: Did that help you?
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: Great, carry on!
 
   utter_goodbye:
-  - text: "Bye"
-  
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-  
-  utter_botretry:
-  - text: |- 
-      I'm sorry, I didn't quite understand that. Could you rephrase? I can Help you with these:-
+  - text: Bye
 
-      1. Forms 
-      2. Personal Documents
-      3. Past Employeer Documents
-      4. Pi Report
-      5. Contracted Related FAQs
-      6. Medical Queries
+  utter_iamabot:
+  - text: I am just another bot trying to help you.
+
+  utter_ask_health_form_confirm_exercise:
+  - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
+
+  utter_ask_health_form_sleep:
+  - text: How much sleep did you get 💤 last night?
+
+  utter_ask_health_form_exercise :
+  - text: What kind of exercise did you do?
+
+  utter_ask_health_form_diet:
+  - text: Did you stick to a healthy diet 🥦 yesterday?
+
+  utter_ask_health_form_stress:
+  - text: Is your stress level low, medium or high 🧘🏼?
+
+  utter_ask_health_form_goal:
+  - text: Setting goals - even small ones - is a great way to focus your day. What do you want to accomplish today 🥇 ?
+
+  utter_slots_value:
+  - text: "Here's your daily wellness log:\n
+            - Exercised?: {confirm_exercise}\n
+            - Type of exercise: {exercise}\n
+            - Sleep: {sleep}\n
+            - Stuck to a healthy diet?: {diet}\n
+            - Stress level: {stress}\n
+            - Goal: {goal}"
+
+  utter_no_worries:
+  - text: No Problem :)
+
+  utter_ask_continue:
+  - text: Sorry, I don't quire understand. Do you want to continue?
 
 actions:
-  - utter_greet
-  - utter_cancelled_cheque
-  - utter_medical_query
-  - utter_please_rephrase
-  - utter_details
-  - utter_iamabot
-  - utter_goodbye
-  - utter_happy
-  - utter_find_form16
-  - utter_did_that_help
-  - utter_cheer_up
-  - utter_search_form2
-  - utter_get_personal_document
-  - utter_get_form
-  - utter_pi_report
-  - utter_esign_process
-  - utter_Releaving_letter
-  - utter_pay_slip
-  - utter_past_employeer
-  - utter_direct_contractor
-  - utter_third_party
-  - utter_contract
-  - utter_botgreet
-  # - action_restart
+- validate_health_form
+
+forms:
+  health_form:
+    confirm_exercise:
+    - type: from_intent
+      intent: inform
+      value: true
+    - type: from_intent
+      intent: affirm
+      value: true
+    - type: from_intent
+      intent: deny
+      value: false
+    exercise:
+    - type: from_entity
+      entity: exercise
+    sleep:
+    - type: from_entity
+      entity: sleep
+    - type: from_intent
+      intent: deny
+      value: "None"
+    diet:
+    - type: from_text
+      intent: inform
+    - type: from_text
+      intent: affirm
+    - type: from_text
+      intent: deny
+    stress:
+    - type: from_entity
+      entity: stress
+    goal:
+    - type: from_text
+      intent: inform
 
 session_config:
   session_expiration_time: 60
