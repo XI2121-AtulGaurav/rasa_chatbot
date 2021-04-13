@@ -51,26 +51,17 @@ Once you have you Rasa server up and running, you can test the bot by running th
 <img width="1594" alt="01 rasa-train-success" src="./images/01 rasa-train-success.png">
 
 
-**rasa run actions**
+**rasa run model server**
 
-<img width="1016" alt="02 rasa-run-actions-success" src="./images/02 rasa-run-actions-success.png">
-
-
-**rasa shell - happy flow 1 - affirmed for exercise**
-
-<img width="1525" alt="03 rasa-shell-happy-flow" src="./images/03 rasa-shell-happy-flow.png">
+<img width="1016" alt="02 rasa-run-actions-success" src="./images/03 rasa-runl-model-server.png">
 
 
-**rasa shell - happy flow 2 - denied for exercise**
+**rasa shell - happy flow**
 
-<img width="1528" alt="04 rasa-shell-happy-flow-no-exercise" src="./images/04 rasa-shell-happy-flow-no-exercise.png">
-
-
-**rasa shell - sad flow 1 - going out of scope & coming back**
-
-<img width="1523" alt="05 rasa-shell-sad-path-1" src="./images/05 rasa-shell-sad-path-1.png">
+<img width="1525" alt="03 rasa-shell-happy-flow" src="./images/02 rasa-shell-happy-flow.png">
 
 
-**rasa shell - sad flow 2 - going out of scope & denied to proceed**
+**Inner Working of Chatbot**
 
-<img width="1525" alt="06 rasa-shell-sad-path-2" src="./images/06 rasa-shell-sad-path-2.png">
+<img width="1525" alt="03 rasa-shell-happy-flow" src="./images/diagram.png">
+

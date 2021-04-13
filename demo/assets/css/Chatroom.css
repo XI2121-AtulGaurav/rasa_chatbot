@@ -203,24 +203,29 @@
   display: inline-block;
   transition: all .3s ease;
   cursor: pointer;
-  margin: 3px;
-  background-color: #343d4e;
+  margin: 6px;
+  background-color: #49b3a6;
   color: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 8px 14px;
   letter-spacing: normal;
-  border-radius: 8px
+  font-size: 14px;
+  border-radius: 100px
+}
+
+.chat-buttons + .chat.right {
+  display: none;
 }
 
 .chatroom .chats .chat-buttons .chat-button.chat-button-selected,
 .chatroom .chats .chat-buttons .chat-button:hover {
-  background-color: rgba(52, 61, 78, .6);
+  background-color: #247d72;
   color: #fff
 }
 
 .chatroom .chats .chat-buttons .chat-button.chat-button-disabled {
-  color: grey;
-  border: none;
+  color: #fff;
+  background-color: #7fbab4;
 }
 
 .chatroom .input {

@@ -1,5 +1,251 @@
 version: "2.0"
+
 nlu:
+# ---------------------------------------------------- 
+#                     FORMS
+# ---------------------------------------------------- 
+
+- intent: main_forms
+  examples: |
+    - form
+    - forms
+    - help with forms
+    - help me with forms
+    - I need help with forms
+    - forms please
+    - I want to know about form
+    - forms please
+    - about forms
+
+- intent: child_forms_form_two
+  examples: |
+    - 2
+    - 22
+    - 2 form
+    - 2 forms
+    - form 2
+    - forms 2
+    - about form 2
+    - help with form 2
+    - help me with form 2
+    - I need help with form 2
+    - I want to know about form 2
+
+- intent: child_forms_form_eleven
+  examples: |
+    - 11
+    - 11 11
+    - 11 form
+    - 11 forms
+    - form 11
+    - forms 11
+    - about form 11
+    - help with form 11
+    - help me with form 11
+    - I need help with form 11
+    - I want to know about form 11
+
+- intent: child_forms_form_sixteen
+  examples: |
+    - 16
+    - 16 16
+    - 16 form
+    - 16 forms
+    - form 16
+    - forms 16
+    - about form 16
+    - help with form 16
+    - help me with form 16
+    - I need help with form 16
+    - I want to know about form 16
+
+
+# ---------------------------------------------------- 
+#                  PERSONAL DOCS
+# ---------------------------------------------------- 
+
+- intent: main_personal_docs
+  examples: |
+    - personal
+    - personal documents
+    - personal docs
+    - about personal documents
+    - about personal docs
+    - help with personal documents
+    - help me with personal documents
+    - I need help with personal documents
+    - I want to know about personal document
+    - about personal documents
+
+- intent: child_personal_docs_gratuity
+  examples: |
+    - gratuity
+    - gratuity form
+    - gratuity forms
+    - about gratuity form
+    - help with gratuity form
+    - help me with gratuity form
+    - I need help with gratuity form
+    - I want to know about gratuity form
+
+- intent: child_personal_docs_candidate
+  examples: |
+    - candidate information
+    - candidate information form
+    - candidate information form
+    - about candidate information form
+    - help with candidate information form
+    - help me with candidate information form
+    - I need help with candidate information form
+    - I want to know about candidate information form
+
+- intent: child_personal_docs_bank
+  examples: |
+    - bank
+    - bank docs
+    - bank documents
+    - about bank documents
+    - help with bank documents
+    - help me with bank documents
+    - I need help with bank documents
+    - I want to know about bank documents
+
+
+# ---------------------------------------------------- 
+#                  OFFICIAL DOCS
+# ---------------------------------------------------- 
+
+- intent: main_official_docs
+  examples: |
+    - official documents
+    - official docs
+    - past employer docs
+    - past employer documents
+    - about past employer documents
+    - help with past employer documents
+    - help me with past employer documents
+    - I need help with past employer documents
+    - I want to know about past employer documents
+
+- intent: child_official_docs_payslip
+  examples: |
+    - pay slip
+    - payslip
+    - about pay slip
+    - help with pay slip
+    - help me with pay slip
+    - I need help with pay slip
+    - I want to know about pay slip
+
+- intent: child_official_docs_rl
+  examples: |
+    - releaving
+    - reliving letter
+    - releaving letter
+    - about releaving letter
+    - help with releaving letter
+    - help me with releaving letter
+    - I need help with releaving letter
+    - I want to know about releaving letter
+
+- intent: child_official_docs_esign
+  examples: |
+    - esign
+    - e-sign
+    - e signing
+    - e-signing
+    - e sign docs
+    - e-sign docs
+    - e sign documents
+    - e-sign documents
+    - esign documents
+    - about esign documents
+    - help with esign documents
+    - help me with esign documents
+    - I need help with esign documents
+    - I want to know about esign documents
+
+
+# ---------------------------------------------------- 
+#                  PI REPORT
+# ---------------------------------------------------- 
+
+- intent: main_pi_report
+  examples: |
+    - pi report
+    - PI report
+    - pi reports
+    - predictive index report
+    - about pi report
+    - help with pi report
+    - help me with pi report
+    - I need help with pi report
+    - I want to know about pi report
+
+
+# ---------------------------------------------------- 
+#                  CONTRACTORS
+# ---------------------------------------------------- 
+
+- intent: main_contract_faqs
+  examples: |
+    - contract
+    - contractor
+    - contractor faqs
+    - contractor related
+    - contractor related faqs
+    - about contractor
+    - help with contractor
+    - help me with contractor
+    - I need help with contractor
+    - I want to know about contractor
+
+- intent: child_contract_faqs_direct
+  examples: |
+    - direct contract
+    - direct contractor
+    - about direct contractor
+    - help with direct contractor
+    - help me with direct contractor
+    - I need help with direct contractor
+    - I want to know about direct contractor
+
+- intent: child_contract_faqs_thirdparty
+  examples: |
+    - thirdparty
+    - third party
+    - third party contractor
+    - about third party contractor
+    - help with third party contractor
+    - help me with third party contractor
+    - I need help with third party contractor
+    - I want to know about third party contractor
+
+
+# ---------------------------------------------------- 
+#                  MEDICAL FAQs
+# ---------------------------------------------------- 
+
+- intent: main_medical_faqs
+  examples: |
+    - medical
+    - medical faqs
+    - medical queries
+    - medical certificate
+    - fitness certificate
+    - fitness certificate
+    - about medical queries
+    - help with medical queries
+    - help me with medical queries
+    - I need help with medical queries
+    - I want to know about medical queries
+    - I have medical queries
+
+
+# ---------------------------------------------------- 
+#                     OTHERS
+# ---------------------------------------------------- 
+
 - intent: greet
   examples: |
     - hey
@@ -15,6 +261,8 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - hola
+    - what's up
 
 - intent: goodbye
   examples: |
@@ -38,17 +286,12 @@ nlu:
     - of course
     - that sounds good
     - correct
-    - sure
+    - yo
+    - I agree
+    - lets do it
     - ok
-    - why not
-    - ok great
-    - yes I did
-    - yeah, great
-    - pretty good
-    - fine
-    - You bet
-    - I sure did
-    - more or less
+    - that works
+    - yep
 
 - intent: deny
   examples: |
@@ -59,14 +302,25 @@ nlu:
     - don't like that
     - no way
     - not really
-    - none
-    - absolutely not
-    - no thanks
-    - didn't do any
-    - no I didn't
-    - could have been better
-    - not great
     - nope
+    - no, it is fine
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
 
 - intent: bot_challenge
   examples: |
@@ -74,70 +328,6 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
-- intent: inform
-  examples: |
-    - a full [8 hours](sleep)
-    - only [four hours](sleep)
-    - about [six hours](sleep)
-    - [low](stress)
-    - [medium](stress)
-    - [high](stress) stress right now
-    - Yes, I went for a [run](exercise)
-    - uh huh an hour of [yoga](exercise)
-    - yep, I went for a [hike](exercise)
-    - Yes I took the dog for a [walk](exercise)
-    - Yeah, I played [tennis](exercise)
-    - I went [swimming](exercise)
-    - I went for [walk](exercise)
-    - I did [swimming](exercise)
-    - I went for [cycling](exercise)
-    - Took a [spin class](exercise)
-    - Did some [boxing](exercise)
-    - [rock climbing](exercise)
-    - played some [basketball](exercise)
-    - played [football](exercise)
-    - I did a [workout](exercise) video
-    - I want to get up early and go for a run
-    - Be more patient with my family
-    - Try to be a better friend
-    - Make sure to eat better tomorrow
-    - eat less junk food
-    - eat better
-    - spend less time on my phone
-    - don't procrastinate
-    - Go to bed earlier
-    - Don't stay up so late
-    - try to make some time to meditate
-    - i ate pretty healthy overall
-    - lots of fruits and vegetables
-    - I ate a salad
-    - too many snacks
-    - too many sweets
-    - too much junk food
-    - a lot of carbs
-    - too much fatty food
-    - Get more exercise
-
-- intent: out_of_scope
-  examples: |
-    - that's not what I want to do
-    - wait stop
-    - you're no help
-    - this is no help at all
-    - how old are you
-    - I want to order a pizza
-    - tell me the weather
-    - this isn't working
-    - I already told you that
-    - don't like that
-    - I don't want to tell you that
-    - none of your business
-    - that's not right
-    - stop asking
-    - nevermind
-    - I want to do something else
-    - I changed my mind
 
 - intent: thankyou
   examples: |

@@ -1,130 +1,195 @@
-version: '2.0'
+version: "2.0"
 
 intents:
   - greet
   - goodbye
   - affirm
   - deny
+  - mood_great
   - bot_challenge
-  - inform
-  - out_of_scope
+  - main_forms
+  - main_personal_docs
+  - main_official_docs
+  - main_pi_report
+  - main_contract_faqs
+  - main_medical_faqs
+  - child_forms_form_two
+  - child_forms_form_eleven
+  - child_forms_form_sixteen
+  - child_personal_docs_gratuity
+  - child_personal_docs_candidate
+  - child_personal_docs_bank
+  - child_official_docs_payslip
+  - child_official_docs_rl
+  - child_official_docs_esign
+  - child_contract_faqs_direct
+  - child_contract_faqs_thirdparty
+  - child_medical_faqs_certificate
   - thankyou
 
-slots:
-  confirm_exercise:
-    type: bool
-    influence_conversation: false
-  exercise:
-    type: text
-    influence_conversation: false
-  sleep:
-    type: text
-    influence_conversation: false
-  diet:
-    type: text
-    influence_conversation: false
-  stress:
-    type: text
-    influence_conversation: false
-  goal:
-    type: text
-    influence_conversation: false
-
-entities:
-  - exercise
-  - sleep
-  - stress
-
 responses:
+
+# ---------------------------------------------------- 
+#                     FORMS
+# ---------------------------------------------------- 
+
+  utter_forms:
+  - text: Sure thing! Below are the categories of forms, please let me know which one
+  - text: Alright! Inside forms section, we have following categories plz let me know your preference.
+  utter_forms_options:
+  - text: Click on a button to continue
+    buttons:
+      - title: "Form 2"
+        payload: '/child_forms_form_two'
+      - title: "Form 11"
+        payload: '/child_forms_form_eleven'
+      - title: "Form 16"
+        payload: '/child_forms_form_sixteen'
+
+  utter_forms_form_two:
+  - text: You can find [form 2](https://people.zoho.com/xebiacom/zp#files/companyfile/listview) in documents and policies section. If form is in pdf format then convert it into word & fill it.
+
+  utter_forms_form_eleven:
+  - text: You can find [form 11](https://people.zoho.com/xebiacom/zp#files/companyfile/listview) in documents and policies section. If form is in pdf format then convert it into word & fill it.
+
+  utter_forms_form_sixteen:
+  - text: Please upload the existing Form 16 and ask the previous employer to share the pending one. Share it with us on email later on. This is a mandatory document for BGV so please follow up and get it closed.
+
+
+# ---------------------------------------------------- 
+#                  PERSONAL DOCS
+# ---------------------------------------------------- 
+
+  utter_personal_docs:
+  - text: Sure thing! under personal documents we have following options
+  - text: Alright! Below are the personal documents I can help you with
+  utter_personal_docs_options:
+  - text: |
+      - Gratuity Form
+      - Candidate Information Form
+      - Bank Documents
+
+  utter_personal_docs_gratuity:
+  - text: |
+      You can find [Gratuity form](https://people.zoho.com/xebiacom/zp#files/companyfile/listview) in documents and policies section.
+      If form is in pdf format then convert it into word & fill it.
+
+  utter_personal_docs_candidate:
+  - text: |
+      You can find [Candidate Information form](https://people.zoho.com/xebiacom/zp#files/companyfile/listview) in documents and policies section.
+      If form is in pdf format then convert it into word & fill it.
+
+  utter_personal_docs_bank:
+  - text: If you donot have cancelled cheques then please attach copy of passbook or screenshot of net banking with IFSC code & bank account number.
+
+
+# ---------------------------------------------------- 
+#                  OFFICIAL DOCS
+# ---------------------------------------------------- 
+
+  utter_official_docs:
+  - text: Sure thing! under official documents we have following options
+  - text: Alright! Below are the official documents I can help you with
+  utter_official_docs_options:
+  - text: |
+      - Pay Slip
+      - Relieving Letter
+      - ESign Documents
+
+  utter_official_docs_payslip:
+  - text: You are required to add all requested pay slips in 1 pdf file.
+
+  utter_official_docs_rl:
+  - text: | 
+      In cases you donot have relieving letter then please upload other available letters.
+      For the immediate last company, you could upload email mentioning last working day.
+
+  utter_official_docs_esign:
+  - text: To esign documents you could use any digital signatures or you could even create free trial account on [docusign](https://www.docusign.in/).
+
+
+# ---------------------------------------------------- 
+#                  PI REPORT
+# ---------------------------------------------------- 
+
+  utter_pi_report:
+  - text: In Zoho official information section, there is a link to Predictive Index. Once you complete the same, pi report will be generated and sent to your mailbox.
+
+
+# ---------------------------------------------------- 
+#                  CONTRACTORS
+# ---------------------------------------------------- 
+
+  utter_contract_faqs:
+  - text: Okay, below are two kinds of contractors we have, about which one would you like to know?
+  utter_contract_faqs_options:
+  - text: |
+      - Direct Contractor
+      - Third Party Contractor
+
+  utter_contract_faqs_direct:
+  - text: |
+      You need to fill PF form 1, form 2 and CISF form, Please upload a blank form in place of gratuity form.
+      All these forms are available in [documents and policies](https://people.zoho.com/xebiacom/zp#files/companyfile/listview) section.
+
+  utter_contract_faqs_thirdparty:
+  - text: | 
+      For third party contractors we request you to upload a blank document in place of PF form 1, form 2, gratuity and CISF form. 
+      All these forms are available in [documents and policies](https://people.zoho.com/xebiacom/zp#files/companyfile/listview) section.
+
+
+# ---------------------------------------------------- 
+#                  MEDICAL FAQs
+# ---------------------------------------------------- 
+
+  utter_medical_faqs:
+  - text: Okay, what would you like to know?
+  utter_medical_faqs_options:
+  - text: |
+      - Medical Certificate
+
+  utter_medical_faqs_certificate:
+  - text: Please share a fit to work certificate with HR. If it is not available now, please share it on email later on.
+
+
+# ---------------------------------------------------- 
+#                     OTHERS
+# ---------------------------------------------------- 
+
   utter_greet:
-  - text: Hi! It's time for your daily wellness check. Tracking healthy habits is a great way to measure your progress over time. Would you like to answer few questions about your health?
-
-  utter_cheer_up:
-  - text: 'Here is something to cheer you up:'
-    image: https://i.imgur.com/nGF1K8f.jpg
-
-  utter_did_that_help:
-  - text: Did that help you?
-
-  utter_happy:
-  - text: Great, carry on!
-
-  utter_goodbye:
-  - text: Bye
-
-  utter_iamabot:
-  - text: I am just another bot trying to help you.
-
-  utter_ask_health_form_confirm_exercise:
-  - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
-
-  utter_ask_health_form_sleep:
-  - text: How much sleep did you get 💤 last night?
-
-  utter_ask_health_form_exercise :
-  - text: What kind of exercise did you do?
-
-  utter_ask_health_form_diet:
-  - text: Did you stick to a healthy diet 🥦 yesterday?
-
-  utter_ask_health_form_stress:
-  - text: Is your stress level low, medium or high 🧘🏼?
-
-  utter_ask_health_form_goal:
-  - text: Setting goals - even small ones - is a great way to focus your day. What do you want to accomplish today 🥇 ?
-
-  utter_slots_value:
-  - text: "Here's your daily wellness log:\n
-            - Exercised?: {confirm_exercise}\n
-            - Type of exercise: {exercise}\n
-            - Sleep: {sleep}\n
-            - Stuck to a healthy diet?: {diet}\n
-            - Stress level: {stress}\n
-            - Goal: {goal}"
+  - text: Hey 👋! I can help you with information related to following
+  utter_greet_options:
+  - text: |
+      - Forms
+      - Personal Documents
+      - Official Documents
+      - PI Report
+      - Contractors
+      - Medical Certificate
 
   utter_no_worries:
-  - text: No Problem :)
+  - text: 🌈 No Problem, hey! me if you need help with anything else 😊
 
   utter_ask_continue:
-  - text: Sorry, I don't quire understand. Do you want to continue?
+  - text: 😕 Sorry, I could not understand that. Please try from again from below options?
 
-actions:
-- validate_health_form
+  utter_ask_restart:
+  - text: I think I am lost 😐, do you want to retry from beginning?
 
-forms:
-  health_form:
-    confirm_exercise:
-    - type: from_intent
-      intent: inform
-      value: true
-    - type: from_intent
-      intent: affirm
-      value: true
-    - type: from_intent
-      intent: deny
-      value: false
-    exercise:
-    - type: from_entity
-      entity: exercise
-    sleep:
-    - type: from_entity
-      entity: sleep
-    - type: from_intent
-      intent: deny
-      value: "None"
-    diet:
-    - type: from_text
-      intent: inform
-    - type: from_text
-      intent: affirm
-    - type: from_text
-      intent: deny
-    stress:
-    - type: from_entity
-      entity: stress
-    goal:
-    - type: from_text
-      intent: inform
+  utter_positive_restart:
+  - text: do you want me to start again from beginning?
+
+  utter_terminate:
+  - text: 🤔 Alright, feel free to reachout to support staff on [mail 📬](krupesh.anadkat@xebia.com) in case you need more help.
+
+  utter_force_terminate:
+  - text: I think I am lost 😐, feel free to reachout to support staff on [mail 📬](krupesh.anadkat@xebia.com) in case you need more help.
+
+  utter_goodbye:
+  - text: "👋 Bye"
+
+  utter_iamabot:
+  - text: "I am a faq bot 🤖, built with Python & Rasa Open Source."
 
 session_config:
   session_expiration_time: 60

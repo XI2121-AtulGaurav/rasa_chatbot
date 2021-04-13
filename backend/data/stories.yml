@@ -2,50 +2,241 @@ version: "2.0"
 
 stories:
 
-- story: Greet user back
+- story: User greets - Sad Flow 1
   steps:
   - intent: greet
   - action: utter_greet
+  - action: utter_greet_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_greet_options
 
-- story: Thank you, end and reset
-  steps:
-  - intent: thankyou
-  - action: utter_no_worries
-  - action: utter_goodbye
-  - action: action_restart
-
-- story: No Form
+- story: User greets - Sad Flow 2
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: deny
-  - action: utter_no_worries
-  - action: utter_goodbye
-  - action: action_restart
-
-- story: Sad Path 1 - Retry
-  steps:
-  - intent: affirm
-  - action: health_form
-  - active_loop: health_form
-  - intent: out_of_scope
+  - action: utter_greet_options
+  - intent: nlu_fallback
   - action: utter_ask_continue
-  - intent: affirm
-  - action: health_form
-  - active_loop: null
-  - action: utter_slots_value
-  - action: action_restart
+  - action: utter_greet_options
+  - intent: nlu_fallback
+  - action: utter_force_terminate
 
-- story: Sad Path 2 - Stop
+# ---------------------------------------------------- 
+#                     FORMS
+# ---------------------------------------------------- 
+
+- story: User asks for Forms - Sad Flow 1
   steps:
-  - intent: affirm
-  - action: health_form
-  - active_loop: health_form
-  - intent: out_of_scope
+  - intent: main_forms
+  - action: utter_forms
+  - action: utter_forms_options
+  - intent: nlu_fallback
   - action: utter_ask_continue
-  - intent: deny
-  - action: action_deactivate_loop
-  - active_loop: null
-  - action: utter_no_worries
-  - action: utter_goodbye
-  - action: action_restart
+  - action: utter_forms_options
+
+- story: User asks for Forms - Sad Flow 2
+  steps:
+  - intent: main_forms
+  - action: utter_forms
+  - action: utter_forms_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_forms_options
+  - intent: nlu_fallback
+  - action: utter_force_terminate
+
+- story: User asks for Form 2
+  steps:
+  - intent: main_forms
+  - action: utter_forms
+  - action: utter_forms_options
+  - intent: child_forms_form_two
+  - action: utter_forms_form_two
+  - action: utter_positive_restart
+
+- story: User asks for Form 11
+  steps:
+  - intent: main_forms
+  - action: utter_forms
+  - action: utter_forms_options
+  - intent: child_forms_form_eleven
+  - action: utter_forms_form_eleven
+  - action: utter_positive_restart
+
+- story: User asks for Form 16
+  steps:
+  - intent: main_forms
+  - action: utter_forms
+  - action: utter_forms_options
+  - intent: child_forms_form_sixteen
+  - action: utter_forms_form_sixteen
+  - action: utter_positive_restart
+
+
+# ---------------------------------------------------- 
+#                  PERSONAL DOCS
+# ---------------------------------------------------- 
+
+- story: User asks for Personal Docs - Sad Flow 1
+  steps:
+  - intent: main_personal_docs
+  - action: utter_personal_docs
+  - action: utter_personal_docs_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_personal_docs_options
+
+- story: User asks for Personal Docs - Sad Flow 2
+  steps:
+  - intent: main_personal_docs
+  - action: utter_personal_docs
+  - action: utter_personal_docs_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_personal_docs_options
+  - intent: nlu_fallback
+  - action: utter_force_terminate
+
+- story: User asks for Gratuity Form
+  steps:
+  - intent: main_personal_docs
+  - action: utter_personal_docs
+  - action: utter_personal_docs_options
+  - intent: child_personal_docs_gratuity
+  - action: utter_personal_docs_gratuity
+  - action: utter_positive_restart
+
+- story: User asks for Candidate Information Form
+  steps:
+  - intent: main_personal_docs
+  - action: utter_personal_docs
+  - action: utter_personal_docs_options
+  - intent: child_personal_docs_candidate
+  - action: utter_personal_docs_candidate
+  - action: utter_positive_restart
+
+- story: User asks for Bank Documents
+  steps:
+  - intent: main_personal_docs
+  - action: utter_personal_docs
+  - action: utter_personal_docs_options
+  - intent: child_personal_docs_bank
+  - action: utter_personal_docs_bank
+  - action: utter_positive_restart
+
+
+# ---------------------------------------------------- 
+#                  OFFICIAL DOCS
+# ---------------------------------------------------- 
+
+- story: User asks for Official Docs - Sad Flow 1
+  steps:
+  - intent: main_official_docs
+  - action: utter_official_docs
+  - action: utter_official_docs_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_official_docs_options
+
+- story: User asks for Official Docs - Sad Flow 2
+  steps:
+  - intent: main_official_docs
+  - action: utter_official_docs
+  - action: utter_official_docs_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_official_docs_options
+  - intent: nlu_fallback
+  - action: utter_force_terminate
+
+- story: User asks for Pay Slip
+  steps:
+  - intent: main_official_docs
+  - action: utter_official_docs
+  - action: utter_official_docs_options
+  - intent: child_official_docs_payslip
+  - action: utter_official_docs_payslip
+  - action: utter_positive_restart
+
+- story: User asks for Relieving Letter
+  steps:
+  - intent: main_official_docs
+  - action: utter_official_docs
+  - action: utter_official_docs_options
+  - intent: child_official_docs_rl
+  - action: utter_official_docs_rl
+  - action: utter_positive_restart
+
+- story: User asks for ESign Documents
+  steps:
+  - intent: main_official_docs
+  - action: utter_official_docs
+  - action: utter_official_docs_options
+  - intent: child_official_docs_esign
+  - action: utter_official_docs_esign
+  - action: utter_positive_restart
+
+
+# ---------------------------------------------------- 
+#                  PI REPORT
+# ---------------------------------------------------- 
+
+- story: User asks for PI Report
+  steps:
+  - intent: main_pi_report
+  - action: utter_pi_report
+
+
+# ---------------------------------------------------- 
+#                  CONTRACTORS
+# ---------------------------------------------------- 
+
+- story: User asks about Contractor - Sad Flow 1
+  steps:
+  - intent: main_contract_faqs
+  - action: utter_contract_faqs
+  - action: utter_contract_faqs_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_contract_faqs_options
+
+- story: User asks about Contractor - Sad Flow 2
+  steps:
+  - intent: main_contract_faqs
+  - action: utter_contract_faqs
+  - action: utter_contract_faqs_options
+  - intent: nlu_fallback
+  - action: utter_ask_continue
+  - action: utter_contract_faqs_options
+  - intent: nlu_fallback
+  - action: utter_force_terminate
+
+- story: User asks for Direct Contractor
+  steps:
+  - intent: main_contract_faqs
+  - action: utter_contract_faqs
+  - action: utter_contract_faqs_options
+  - intent: child_contract_faqs_direct
+  - action: utter_contract_faqs_direct
+  - action: utter_positive_restart
+
+- story: User asks for Third Party Contractor
+  steps:
+  - intent: main_contract_faqs
+  - action: utter_contract_faqs
+  - action: utter_contract_faqs_options
+  - intent: child_contract_faqs_thirdparty
+  - action: utter_contract_faqs_thirdparty
+  - action: utter_positive_restart
+
+
+# ---------------------------------------------------- 
+#                 MEDICAL FAQs
+# ---------------------------------------------------- 
+
+- story: User asks about Medical Certificate
+  steps:
+  - intent: main_medical_faqs
+  - action: utter_medical_faqs_certificate
+  - action: utter_positive_restart
